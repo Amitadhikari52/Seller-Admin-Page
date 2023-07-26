@@ -1,0 +1,60 @@
+/* CSS styles go here */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+  margin: 20px 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+
+form label {
+  margin-bottom: 10px;
+}
+
+form input[type="text"],
+form input[type="email"] {
+  width: 200px;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+form button {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #0056b3;
+}
+
+#productsList {
+  margin: 20px;
+}
+
+#productsList div {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+#productsList div p {
+  margin: 5px 0;
+}
+
+#totalValue {
+  text-align: center;
+  margin: 20px;
+}

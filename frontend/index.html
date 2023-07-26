@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Seller Admin Page</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Seller Admin Page</h1>
+
+  <form id="sellerForm">
+    <label for="productName">Product Name:</label>
+    <input type="text" id="productName" required>
+
+    <label for="sellingPrice">Selling Price:</label>
+    <input type="text" id="sellingPrice" required>
+
+    <button type="submit">Add Product</button>
+  </form>
+
+  <div id="productsList">
+    <!-- Product list will be dynamically populated here -->
+  </div>
+
+  <p id="totalValue">Total Value of Products Worth: $0</p>
+
+  <script src="script.js"></script>
+</body>
+</html>
