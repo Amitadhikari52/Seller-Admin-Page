@@ -1,6 +1,3 @@
-// Move the productsData declaration outside the window.onload function so that it becomes a global variable
-let productsData = [];
-
 // Function to display products in the frontend
 function displayProducts() {
   const productsList = document.getElementById('productsList');
@@ -40,6 +37,8 @@ function deleteProduct(productId) {
         // Remove the deleted product from the productsData array
         productsData = productsData.filter((product) => product.id !== productId);
         displayProducts();
+        // Save the updated productsData array to web storage after deleting
+        localStorage.setItem('productsData', JSON.stringify(productsData));
       }
     })
     .catch((error) => {
@@ -47,10 +46,19 @@ function deleteProduct(productId) {
     });
 }
 
+// Move the productsData declaration outside the window.onload function so that it becomes a global variable
+let productsData = [];
+
 window.onload = function () {
   const sellerForm = document.getElementById('sellerForm');
   const productNameInput = document.getElementById('productName');
   const sellingPriceInput = document.getElementById('sellingPrice');
+
+  // Check if there is any product data in web storage when the page loads
+  const storedProductsData = localStorage.getItem('productsData');
+  if (storedProductsData) {
+    productsData = JSON.parse(storedProductsData);
+  }
 
   // Function to add a product
   function addProduct(event) {
@@ -84,6 +92,8 @@ window.onload = function () {
           // Add the new product to the productsData array
           productsData.push(data);
           displayProducts();
+          // Save the updated productsData array to web storage after adding
+          localStorage.setItem('productsData', JSON.stringify(productsData));
         }
       })
       .catch((error) => {
